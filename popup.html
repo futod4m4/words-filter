@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordFilter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo-container">
+        <img id="turnButton" src="./icons/logo960.png" class="logo">
+        <div class="animation-circles" id="logoAnimation">
+          <div class="circle circle-1"></div>
+          <div class="circle circle-2"></div>
+          <div class="circle circle-3"></div>
+        </div>
+      </div>
+      <div class="icon-container">
+        <img src="https://img.icons8.com/?size=100&id=364&format=png&color=ffffff" class="icon settings-icon" id="settingsIcon">
+      </div>
+    </header>
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="enableFilter">
+        <span class="slider round"></span>
+      </label>
+      <span id="statusText">Фильтр выключен</span>
+    </div>
+    
+    <div id="statsInfo" class="stats-info">
+      <span>Слов в базе: <span id="wordCount">...</span></span>
+    </div>
+    
+    <div class="info-section">
+      <p>Расширение заменяет нецензурные слова на выбранный символ на просматриваемых веб-страницах.</p>
+      <p class="tip">Совет: Добавьте все формы нецензурных слов, включая падежи и другие варианты написания.</p>
+    </div>
+    
+    <div class="footer">
+      <p>WordFilter v1.0</p>
+    </div>
+  </div>
+  
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <h2>Настройки</h2>
+      <div class="form-group">
+        <label for="replacement">Символ замены:</label>
+        <input type="text" id="replacement" value="*" maxlength="1">
+      </div>
+      
+      <h3>Добавьте свои слова:</h3>
+      <div class="word-list-container">
+        <button id="checkButton">Нажмите чтобы просмотреть слова</button>
+        <textarea id="wordList" placeholder="Введите слова для фильтрации (по одному в строке)"></textarea>
+      </div>
+      
+      <div class="buttons">
+        <button id="saveButton">Сохранить</button>
+        <button id="resetButton">Сбросить</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
